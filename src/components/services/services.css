@@ -1,0 +1,251 @@
+.services {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+.sSection {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.sectionContainer {
+  background-color: #392d47;
+  padding: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.subTitle {
+  font-size: 24px;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.read-more-btn {
+  margin-left: auto;
+}
+
+.read-more-btn button {
+  display: flex;
+  align-items: center;
+  background-color: #392d47;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  gap: 8px;
+}
+
+.arrow-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db8b9b;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  transform: rotate(0deg);
+}
+
+.button-text {
+  transition: all 0.3s ease;
+}
+
+.read-more-btn button:hover {
+  background-color: #db8b9b;
+  color: #0e051a;
+  padding: 8px 20px;
+  border-radius: 30px;
+}
+
+.read-more-btn button:hover .arrow-icon {
+  transform: rotate(90deg);
+  background-color: transparent;
+}
+
+/* For active state when description is shown */
+.sectionContainer.active .read-more-btn .arrow-icon {
+  transform: rotate(90deg);
+}
+
+.description {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  font-size: 18px;
+  margin-top: 16px;
+  transition: all 0.4s ease;
+  padding: 0 0;
+}
+
+.sectionContainer .description.show {
+  max-height: 500px; /* adjust as needed */
+  opacity: 1;
+  padding: 12px 0;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.loading-gif {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.sectionContainer.active .subTitle::after {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 1536px) {
+  .service,
+  .counterList {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .sTitle {
+    font-size: 128px;
+  }
+
+  .service {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sTitle {
+    font-size: 48px;
+  }
+
+  .service,
+  .counterList {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .sectionContainer {
+    padding: 16px;
+    margin-top: 12px;
+  }
+
+  .sSection.right {
+    display: flex;
+    order: 2;
+    height: 500px;
+  }
+
+  .sSection.left {
+    display: flex;
+    order: 1; /* Show below the right section */
+  }
+
+  .title {
+    font-size: 32px;
+    margin-bottom: 4px;
+  }
+
+  .subTitle {
+    font-size: 18px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 468px) {
+  .services {
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .sectionContainer {
+    padding: 16px;
+    margin-top: 12px;
+  }
+
+  .sSection.right {
+    display: none;
+    margin-top: -30px;
+    order: 2;
+    height: 300px;
+  }
+
+  .sSection.left {
+    display: flex;
+    order: 1; /* Show below the right section */
+  }
+
+  .title {
+    font-size: 32px;
+    margin-bottom: 4px;
+  }
+
+  .subTitle {
+    font-size: 18px;
+  }
+
+  .subTitletext {
+    width: 190px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+  .arrow-icon {
+    display: none;
+  }
+
+  /* Always show hover state on mobile */
+  .read-more-btn button {
+    background-color: #db8b9b;
+    color: #0e051a;
+    padding: 8px 10px;
+    border-radius: 30px;
+  }
+}
